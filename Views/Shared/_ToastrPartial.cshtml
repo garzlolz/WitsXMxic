@@ -1,0 +1,26 @@
+﻿@using WitsXMxic.Const
+@{
+    string? returnCode = TempData[TempDataKeys.Code]?.ToString();
+    string? returnMessage = TempData[TempDataKeys.Message]?.ToString();
+    string successCode = ResponseCodeMessage.SuccessCode.ToString();
+    string successMessage = ResponseCodeMessage.SuccessMessage;
+    int timeOut = 2000;
+}
+
+<script on-content-loaded="true">
+    // 預設toastr timeout 時間
+    toastr.options.timeOut = @timeOut;
+
+    $(function () {
+        if ('@returnCode' !== '') {
+            if ('@returnCode' !== '@successCode') {
+                let _message = 'System Error';
+                if ('@returnMessage' != '') _message = '@returnMessage';
+                toastr.error(_message, { timeOut: @timeOut });
+
+            } else {
+                toastr.success('@successMessage', { timeOut: @timeOut });
+            }
+        }
+    });
+</script>
