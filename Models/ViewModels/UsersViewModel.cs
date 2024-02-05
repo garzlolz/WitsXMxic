@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace WitsXMxic.Models.ViewModels
 {
@@ -29,15 +30,18 @@ namespace WitsXMxic.Models.ViewModels
         /// <summary>
         /// 姓名
         /// </summary>
+        [DisplayName("姓名")]
         [StringLength(10)]
         public string? Name { get; set; } = null!;
         /// <summary>
         /// 年齡
         /// </summary>
+        [DisplayName("年齡")]
         public int? Age { get; set; }
         /// <summary>
         /// 生日
         /// </summary>
+        [DisplayName("生日")]
         public DateTime? BirthDay { get; set; }
     }
 }
