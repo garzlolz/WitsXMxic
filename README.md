@@ -32,7 +32,7 @@ Nuget> Update-Dabase
 - 新增及編輯頁
   ![alt text](https://i.imgur.com/cunPRRr.jpeg)
 
-## WWebForm 版本
+## WebForm 版本
 
 ### 1. 修改 Web.config 中的連線字串
 
